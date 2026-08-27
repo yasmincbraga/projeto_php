@@ -1,50 +1,86 @@
 body {
- font-family: Arial, sans-serif;
- margin: 0;
- background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
 }
 header {
- background-color: #8e70fc;
- color: white;
- padding: 15px 30px;
+    background-color: #9370DB;
+    color: white;
+    padding: 15px 30px;
 }
 header nav a {
- color: white;
- margin-right: 15px;
- text-decoration: none;
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
 }
 main {
- padding: 20px 30px;
+    padding: 20px 30px;
 }
 footer {
- text-align: center;
- padding: 10px;
- color: #666;
+    text-align: center;
+    padding: 10px;
+    color: #666;
 }
 
+/* Aula 03 - formulario de login */
 form {
- max-width: 320px;
- background-color: rgb(196, 190, 250);
- padding: 20px;
- border-radius: 6px;
+    max-width: 320px;
+    background-color: rgb(210, 170, 255);
+    padding: 20px;
+    border-radius: 6px;
 }
+ 
 form label {
- display: block;
- margin-top: 10px;
- font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
 }
+ 
 form input {
- width: 100%;
- padding: 8px;
- margin-top: 5px;
- box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
 }
+ 
 form button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #895ffc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Aula 05 - tabela de produtos */
+table {
+ width: 100%;
+ border-collapse: collapse;
+ background-color: white;
  margin-top: 15px;
- padding: 8px 16px;
- background-color: #6c2be4;
+}
+table th, table td {
+ border: 1px solid #ddd;
+ padding: 8px;
+ text-align: left;
+}
+table th {
+ background-color: #9400D3;
  color: white;
- border: none;
- border-radius: 4px;
- cursor: pointer;
+}
+
+.Pdcad{
+    text-align: center;
+    color: #a860fa;
+}
+
+.Btlistar{
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #895ffc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

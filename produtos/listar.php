@@ -1,8 +1,44 @@
-<?php include '../verifica_login.php'; ?>
-<?php include '../cabecalho.php'; ?>
+<?php
+require __DIR__ . '/verifica_login.php';
+require __DIR__ . '/../cabecalho.php';
+require __DIR__ . '/../conexao.php';
+
+$sql = "SELECT * FROM produtos";
+$resultado = mysqli_query($conexao, $sql);
+
+?>
+
 <main>
-    <p>Bem-vindo(a), <?php echo $_SESSION['usuario_nome']; ?>!</p>
-    <!-- conteúdo da página -->
+    <h2 class="Pdcad">Produtos cadastrados</h2>
+   
+    <a href="cadastrar.php"><button type="submit" class="Btlistar">Cadastrar novo produto</button></a>
+
+    <table>
+        <tr>
+            <th>Produto</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Qtd.</th>
+            <th>Ações</th>
+        </tr>
+
+        <?php while ($produto = mysqli_fetch_assoc($resultado)) { ?>
+        <tr>
+            <td><?php echo $produto['nome']; ?></td>
+            <td><?php echo $produto['descricao']; ?></td>
+            <td>R$ <?php echo $produto['preco']; ?></td>
+            <td><?php echo $produto['quantidade']; ?></td>
+            <td>
+                <a href="atualizar.php?id=<?php echo $produto['id'];
+        ?>"><button type="submit" class="Btlistar">Editar</button></a>
+                    <a href="excluir.php?id=<?php echo $produto['id'];
+        ?>"><button type="submit" class="Btlistar">Excluir</button></a>
+                    </td>
+                </tr>
+                <?php } ?>
+    </table>
 </main>
 
-<?php include '../rodape.php'; ?>
+<?php
+require __DIR__ . '/../rodape.php';
+?>
