@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/verifica_login.php';
-require __DIR__ . '/../cabecalho.php';
 require __DIR__ . '/../conexao.php';
+require __DIR__ . '/../cabecalho.php';
 
 $sql = "SELECT * FROM produtos";
 $resultado = mysqli_query($conexao, $sql);
@@ -30,11 +30,11 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?php echo $produto['quantidade']; ?></td>
             <td>
                 <a href="atualizar.php?id=<?php echo $produto['id'];
-        ?>"><button type="submit" class="Btlistar">Editar</button></a>
+            ?>"><button type="submit" class="Btlistar">Editar</button></a>
                     <a href="excluir.php?id=<?php echo $produto['id'];
-        ?>"><button type="submit" class="Btlistar">Excluir</button></a>
-                    </td>
-                </tr>
+            ?>"><button type="submit" class="Btlistar">Excluir</button></a>
+                        </td>
+                    </tr>
                 <?php } ?>
     </table>
 </main>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Jul-2026 às 16:48
+-- Tempo de geração: 03-Set-2026 às 16:50
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -36,6 +36,17 @@ CREATE TABLE `produtos` (
   `preco` decimal(10,2) NOT NULL,
   `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `quantidade`) VALUES
+(1, 'A Seleção', 'livro por Kiera Cass\r\n', '46.45', 10),
+(2, 'Melhor do que nos filmes', 'livro por Lynn Painter', '49.67', 22),
+(3, 'Assistente do Vilão', 'Livro por Hannah Nicole Maehrer', '46.45', 5),
+(4, 'O príncipe cruel', 'Livro  por Holly Black', '32.39', 13),
+(5, 'A hipótese do amor', 'Livro por Ali Hazelwood', '46.26', 50);
 
 -- --------------------------------------------------------
 
@@ -81,7 +92,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
