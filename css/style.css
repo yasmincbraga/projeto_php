@@ -85,6 +85,11 @@ table th {
     cursor: pointer;
 }
 
+a{
+    text-decoration: none;
+    color: #ddd;
+}
+
 @media (max-width: 480px) {
 
     header {
