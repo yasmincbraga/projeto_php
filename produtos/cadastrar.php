@@ -3,10 +3,10 @@ require __DIR__ . '/verifica_login.php';
 require __DIR__ . '/../conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $descricao = $_POST['descricao'];
-    $preco = $_POST['preco'];
-    $quantidade = $_POST['quantidade'];
+    $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
+    $descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
+    $preco = trim($_POST['preco']);
+    $quantidade = trim($_POST['quantidade']);
 
     if ($nome == "" || $preco == "" || $quantidade == "") {
         $mensagem = "Preencha todos os campos obrigatórios.";
@@ -14,7 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "INSERT INTO produtos (nome, descricao, preco, quantidade)
                 VALUES ('$nome', '$descricao', '$preco', '$quantidade')";
 
-        if (mysqli_query($conexao, $sql)) {
+       if (mysqli_query($conexao, $sql)) {
+            $_SESSION['mensagem'] = "Produto cadastrado com sucesso!";
             header('Location: listar.php');
             exit;
         } else {
